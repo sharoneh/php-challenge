@@ -1,0 +1,15 @@
+{
+  "name": "php-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sharoneh/php-challenge.git",
+  "author": "Sharon Hasegawa <sharon.hsgw@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  }
+}
