@@ -1,0 +1,100 @@
+$font-color: #070017;
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 1rem;
+}
+
+.card {
+  border: 1px solid #e7e7e7;
+  background: #f7f7f7;
+  width: min-content;
+
+  &__header,
+  &__footer {
+    padding: 0.625em;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title,
+  &__duration,
+  &__review {
+    font-size: 0.875em;
+  }
+
+  &__title,
+  &__review,
+  &__action {
+    color: $font-color;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+  
+  &__duration {
+    color: rgba(0, 0, 0, .6);
+    margin-top: 0.625em;
+  }
+  
+  &__review {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__icon {
+    height: 1.5em;
+    margin-left: 3px;
+  }
+  
+  &__poster {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .8));
+      z-index: 1;
+    }
+  }
+  
+  &__action {
+    position: absolute;
+    bottom: 1.8em;
+    background: rgba(255, 255, 255, .65);
+    text-decoration: none;
+    padding: 10px 55px;
+    font-size: 15px;
+    z-index: 2;
+    border-radius: 20px;
+    border: 1.5px solid white;
+    transition: ease-in .3s;
+    outline: none;
+
+    &:hover,
+    &:focus-visible {
+      transition: ease-out .3s;
+      background: transparent;
+      color: rgba(255, 255, 255, .85);
+    }
+  }
+  
+  &__footer {
+    font-weight: 200;
+    color: rgba(0, 0, 0, .8);
+  }
+}

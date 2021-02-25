@@ -6,7 +6,8 @@
   "author": "Sharon Hasegawa <sharon.hsgw@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.8"
   },
   "scripts": {
     "dev": "parcel index.html",
