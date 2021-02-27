@@ -1,5 +1,5 @@
 <?php
-require_once('../request.php');
+require_once('./request.php');
 
 try {
   $redis = new Redis();
