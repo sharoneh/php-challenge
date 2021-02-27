@@ -18,7 +18,20 @@ class SimpleJsonRequest
     
     public static function get(string $url, array $parameters = null)
     {
-      return json_decode(self::makeRequest('GET', $url, $parameters));
+      $redis = new Redis();
+      $redis->connect('localhost', 6379);
+      $redis->auth('password');
+
+      if (!$redis->get($url)) {
+        $response = json_decode(self::makeRequest('GET', $url, $parameters));
+
+        $redis->set($url, serialize($response));
+        $redis->expire($url, 30);
+      } else {
+        $response = unserialize($redis->get($url));
+      }
+      
+      return $response;
     }
     
     public static function post(string $url, array $parameters = null, array $data)
